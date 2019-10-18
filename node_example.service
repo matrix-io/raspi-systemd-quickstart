@@ -1,0 +1,12 @@
+[Unit]
+Description=Example systemd Node service.
+
+[Service]
+User=pi
+Type=simple
+
+# Path assumes node.js is installed via nvm https://github.com/nvm-sh/nvm
+ExecStart=/home/pi/.nvm/versions/node/v*/bin/node /home/pi/services/node_example.js
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Example systemd bash service.
+
+[Service]
+User=pi
+Type=simple
+ExecStart=/bin/bash /home/pi/services/bash_example.sh
+
+[Install]
+WantedBy=multi-user.target
