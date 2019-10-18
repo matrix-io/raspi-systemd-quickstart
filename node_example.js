@@ -3,5 +3,5 @@ console.log("*****JAVASCRIPT SERVICE STARTING*****")
 
 counter = 0;
 setInterval(() => {
-    console.log("Looping ... "+counter++);
+    console.log("JS Looping ... "+counter++);
 },1000)

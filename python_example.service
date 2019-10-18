@@ -12,7 +12,7 @@ Type=simple
 # Path assumes node.js is installed via nvm https://github.com/nvm-sh/nvm
 # You'll need to change the path based on the Node.js version you have installed.
 # You can check with: $ ls /home/pi/.nvm/versions/node
-ExecStart=/home/pi/.nvm/versions/node/v12.11.0/bin/node /home/pi/services/node_example.js
+ExecStart=/usr/bin/python3 /home/pi/services/python_example.py
 
 # Automatically Restart after crash
 Restart=on-failure
