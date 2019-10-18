@@ -29,6 +29,9 @@ sudo ln -s ~/services/*.service /etc/systemd/system/
 
 # Commands For Managing Your Services
 > [Helpful .service file options](https://www.freedesktop.org/software/systemd/man/systemd.service.html)
+
+Your services are now setup! Use any of the commands below to control your services.
+
 ```bash
 # Load Any Changes Made To All .service Files
 sudo systemctl daemon-reload
