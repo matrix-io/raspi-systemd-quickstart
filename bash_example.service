@@ -4,7 +4,15 @@ Description=Example systemd bash service.
 [Service]
 User=pi
 Type=simple
+
+# Command to run
 ExecStart=/bin/bash /home/pi/services/bash_example.sh
+
+# Automatically Restart after crash
+Restart=on-failure
+
+# Wait x seconds before restarting
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target

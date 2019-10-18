@@ -5,27 +5,30 @@ This repository contains a few simple examples to quickly get started.
 
 # Getting Started
 Download and move inside this repository.
-```
+```bash
 git clone https://github.com/matrix-io/raspi-systemd-quickstart ~/services
 
 cd ~/services
 ```
 
-<!-- 
-
-With our service and script defined, it's time to add it.
+Turn the bash script into an executable.
 ```bash
-# Make the bash file executable
-chmod +x ~/services/service.sh
+# This is only required for the bash example
+chmod +x ~/services/bash_example.sh
+```
 
-# Give read permissions to your service
-sudo chmod 644 ~/services/bashService.service
+Add read permissions for each service file
+```bash
+chmod 644 ~/services/*.service
+```
 
-# Give systemd a symbolic link to your service
-sudo ln -s ~/services/bashService.sh /etc/systemd/system/bashService.service
-``` -->
+Create a symbolic link in systemd for each service. This allows us to neatly store all our services in a home folder.
+```bash
+sudo ln -s ~/services/*.service /etc/systemd/system/
+```
 
 # Commands For Managing Your Services
+> [Helpful .service file options](https://www.freedesktop.org/software/systemd/man/systemd.service.html)
 ```bash
 # Load Any Changes Made To All .service Files
 sudo systemctl daemon-reload

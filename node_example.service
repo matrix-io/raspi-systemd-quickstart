@@ -1,12 +1,24 @@
 [Unit]
 Description=Example systemd Node service.
 
+# Wait until network services are ready
+After=network.target
+
 [Service]
 User=pi
+
 Type=simple
 
 # Path assumes node.js is installed via nvm https://github.com/nvm-sh/nvm
-ExecStart=/home/pi/.nvm/versions/node/v*/bin/node /home/pi/services/node_example.js
+# You'll need to change the path based on the Node.js version you have installed.
+# You can check with: $ ls /home/pi/.nvm/versions/node
+ExecStart=/home/pi/.nvm/versions/node/v12.11.0/bin/node /home/pi/services/node_example.js
+
+# Automatically Restart after crash
+#Restart=on-failure
+
+# Wait x seconds before restarting
+#RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
