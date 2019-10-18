@@ -1,5 +1,5 @@
 [Unit]
-Description=Example systemd Node service.
+Description=Example systemd Python3 service.
 
 # Wait until network services are ready
 After=network.target
@@ -9,9 +9,6 @@ User=pi
 
 Type=simple
 
-# Path assumes node.js is installed via nvm https://github.com/nvm-sh/nvm
-# You'll need to change the path based on the Node.js version you have installed.
-# You can check with: $ ls /home/pi/.nvm/versions/node
 ExecStart=/usr/bin/python3 /home/pi/services/python_example.py
 
 # Automatically Restart after crash
